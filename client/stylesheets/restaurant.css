@@ -1,0 +1,436 @@
+/* Neo-Brutalist Restaurant Page Styles */
+
+/* CSS Variables - Same as Redish but adapted for restaurants */
+:root {
+    --brutal-primary: #FF6B35;     /* Orange-red for restaurants */
+    --brutal-secondary: #F7931E;   /* Golden orange */
+    --brutal-accent: #FFE66D;      /* Yellow accent */
+    --brutal-info: #4ECDC4;        /* Teal for info */
+    --brutal-success: #95E1D3;     /* Light green */
+    --brutal-warning: #F38BA8;     /* Pink warning */
+    --brutal-danger: #E63946;      /* Red danger */
+    --brutal-dark: #2D3436;        /* Dark text */
+    --brutal-text: #636E72;        /* Medium text */
+    --brutal-text-muted: #808080;  /* Muted text */
+    --brutal-light: #DDD6FE;       /* Light purple */
+    --brutal-white: #FFFFFF;       /* Pure white */
+    --brutal-background: #F8F9FA;  /* Light background */
+    --brutal-border: 3px solid #2D3436;
+    --brutal-shadow: 4px 4px 0px 0px #2D3436;
+    --brutal-shadow-hover: 6px 6px 0px 0px #2D3436;
+    --brutal-shadow-active: 2px 2px 0px 0px #2D3436;
+}
+
+/* Semantic HTML5 Element Resets */
+main, article, section, header, figure, aside, fieldset, legend {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+legend {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+/* Font Imports and Base Styles */
+.neo-brutalist-theme {
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    background-color: var(--brutal-background);
+    color: var(--brutal-dark);
+}
+
+/* Restaurant Container */
+.brutal-restaurant-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+/* Restaurant Detail Card */
+.brutal-restaurant-detail {
+    background: var(--brutal-white);
+    border: var(--brutal-border);
+    box-shadow: var(--brutal-shadow);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Restaurant Image Section */
+.brutal-restaurant-image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.brutal-restaurant-main-image {
+    background: var(--brutal-background);
+    border: var(--brutal-border);
+    box-shadow: var(--brutal-shadow);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.brutal-restaurant-emoji {
+    font-size: 8rem;
+    line-height: 1;
+}
+
+/* Restaurant Info Section */
+.brutal-restaurant-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Restaurant Header */
+.brutal-restaurant-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.brutal-restaurant-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--brutal-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 0.9;
+    margin: 0;
+}
+
+.brutal-restaurant-location,
+.brutal-restaurant-address {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brutal-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.brutal-restaurant-address {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    color: var(--brutal-text-muted);
+}
+
+/* Restaurant Badges */
+.brutal-restaurant-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.brutal-cuisine-badge,
+.brutal-type-badge,
+.brutal-specialty-badge {
+    background: var(--brutal-accent);
+    color: var(--brutal-dark);
+    border: var(--brutal-border);
+    padding: 0.5rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--brutal-shadow);
+}
+
+.brutal-type-badge {
+    background: var(--brutal-info);
+}
+
+.brutal-specialty-badge {
+    background: var(--brutal-secondary);
+    color: var(--brutal-white);
+}
+
+/* Rating Section */
+.brutal-restaurant-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brutal-rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.brutal-rating-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brutal-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Pricing Section */
+.brutal-restaurant-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.brutal-price-section {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.brutal-current-price {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brutal-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Description and Facilities Sections */
+.brutal-restaurant-description,
+.brutal-restaurant-facilities {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.brutal-restaurant-description h3,
+.brutal-restaurant-facilities h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--brutal-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.brutal-restaurant-description p,
+.brutal-restaurant-facilities p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--brutal-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Restaurant Actions */
+.brutal-restaurant-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.brutal-guests-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.brutal-guests-section legend {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brutal-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.brutal-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: fit-content;
+}
+
+.brutal-quantity-btn {
+    background: var(--brutal-white);
+    border: var(--brutal-border);
+    color: var(--brutal-dark);
+    padding: 0.75rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: var(--brutal-shadow);
+    min-width: 3rem;
+    text-align: center;
+}
+
+.brutal-quantity-btn:hover {
+    background: var(--brutal-accent);
+    box-shadow: var(--brutal-shadow-hover);
+    transform: translate(-2px, -2px);
+}
+
+.brutal-quantity-btn:active {
+    box-shadow: var(--brutal-shadow-active);
+    transform: translate(2px, 2px);
+}
+
+#guests {
+    background: var(--brutal-white);
+    border: var(--brutal-border);
+    border-left: none;
+    border-right: none;
+    color: var(--brutal-dark);
+    padding: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    width: 4rem;
+    outline: none;
+}
+
+.brutal-book-table-btn {
+    background: var(--brutal-primary);
+    border: var(--brutal-border);
+    color: var(--brutal-white);
+    padding: 1rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: var(--brutal-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.brutal-book-table-btn:hover {
+    background: var(--brutal-secondary);
+    box-shadow: var(--brutal-shadow-hover);
+    transform: translate(-2px, -2px);
+}
+
+.brutal-book-table-btn:active {
+    box-shadow: var(--brutal-shadow-active);
+    transform: translate(2px, 2px);
+}
+
+/* Related Restaurants */
+.brutal-related-restaurants {
+    margin-top: 2rem;
+}
+
+.brutal-related-restaurants h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--brutal-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.brutal-restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Back Button */
+.brutal-back-btn {
+    background: var(--brutal-white);
+    border: var(--brutal-border);
+    color: var(--brutal-dark);
+    padding: 0.75rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: var(--brutal-shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brutal-back-btn:hover {
+    background: var(--brutal-accent);
+    box-shadow: var(--brutal-shadow-hover);
+    transform: translate(-2px, -2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brutal-restaurant-detail {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .brutal-restaurant-main-image {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .brutal-restaurant-title {
+        font-size: 2rem;
+    }
+
+    .brutal-restaurant-emoji {
+        font-size: 6rem;
+    }
+
+    .brutal-restaurants-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .brutal-restaurant-container {
+        padding: 1rem;
+    }
+
+    .brutal-restaurant-title {
+        font-size: 1.5rem;
+    }
+
+    .brutal-restaurant-emoji {
+        font-size: 4rem;
+    }
+}
